@@ -1,14 +1,12 @@
-const express = require("express");
+const express = require("express"); // spelling dhyan se
 const app = express();
+let port = 5000; // 8080 ki jagah
 
-console.dir(app);
 
-let port = 8080; 
-
-app.listen(port, () => {
-    console.log(`app is listening on port ${port}`);
+app.get("/", (req, res) => {
+    res.send("Hello from Express server!");
 });
 
-app.use((req, res) => {
-    console.log("request received");
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
 });
